@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +50,27 @@
     <Folder Include="DroppableBags\" />
     <Folder Include="InventoryLetters\" />
     <Folder Include="VolumeLimited\" />
+    <Compile Include="Common\EquipSlot.cs" />
+    <Compile Include="Common\IClothing.cs" />
+    <Compile Include="Common\InventoryTypes.cs" />
+    <Compile Include="Common\Item.cs" />
+    <Compile Include="VolumeLimited\LeatherBackpack.cs" />
+    <Compile Include="Common\Player.cs" />
+    <Compile Include="VolumeLimited\Tests.cs" />
+    <Compile Include="VolumeLimited\VolumeConstrainedContainer.cs" />
+    <Compile Include="Common\Volumes.cs" />
+    <Compile Include="Common\Weights.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DroppableBags\" />
+    <Folder Include="InventoryLetters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleInventory\SimpleInventory.csproj">
+      <Project>{2E411365-3E1B-4C2A-996E-763BDD5FF992}</Project>
+      <Name>SimpleInventory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
