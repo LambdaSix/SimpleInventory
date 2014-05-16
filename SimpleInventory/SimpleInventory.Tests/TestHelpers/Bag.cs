@@ -31,14 +31,9 @@ namespace SimpleInventory.Tests.TestHelpers
             return GetEnumerator();
         }
 
-        public bool TryAdd(Item item)
+        public bool Add(Item item)
         {
-            return _inventory.TryAdd(item);
-        }
-
-        public void Add(Item item)
-        {
-            _inventory.Add(item);
+            return _inventory.Add(item);
         }
 
         public IEnumerable<IContainer<Item>> GetContainers()
