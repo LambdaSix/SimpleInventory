@@ -21,7 +21,7 @@ namespace SimpleInventory.Tests
         {
             var inv = new Inventory<float>(maxSize: 1) { 4.0f };
 
-            Assert.Throws<InventoryFullException>(() => inv.Add(8.0f));
+            Assert.AreEqual(false, inv.Add(8.0f));
 
             Assert.AreEqual(1, inv.Count());
         }

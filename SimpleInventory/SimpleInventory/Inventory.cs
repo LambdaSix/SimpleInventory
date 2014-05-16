@@ -20,8 +20,7 @@ namespace SimpleInventory
 
     public interface IContainer<T> : IEnumerable<T>
     {
-        bool TryAdd(T item);
-        void Add(T item);
+        bool Add(T item);
         IEnumerable<IContainer<T>> GetContainers();
         IEnumerable<IContainer<U>> GetContainers<U>();
         IEnumerable<T> Flatten();
@@ -55,7 +54,7 @@ namespace SimpleInventory
             _collection = new List<T>(initialSize);
         }
 
-        public bool TryAdd(T item)
+        public bool Add(T item)
         {
             if (!_fixedSize || _collection.Count < _maxSize)
             {
@@ -64,15 +63,6 @@ namespace SimpleInventory
             }
 
             return false;
-        }
-
-        public void Add(T item)
-        {
-            var result = TryAdd(item);
-            if (result)
-                return;
-
-            throw new InventoryFullException("Inventory Full");
         }
 
         public ILookup<T, T> GetStacks()
