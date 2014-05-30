@@ -25,6 +25,11 @@ namespace SimpleInventory.Examples.VolumeLimited
 
             // This should fail.
             Assert.That(backpack.Add(pieceOfStraw) == false);
+
+            var unobtainium = backpack.First(item => item.Name == "Unobtainium");
+            backpack.Remove(unobtainium);
+
+            Assert.That(backpack.Count() == 1);
         }
     }
 }

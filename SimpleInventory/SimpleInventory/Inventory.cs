@@ -21,6 +21,8 @@ namespace SimpleInventory
     public interface IContainer<T> : IEnumerable<T>
     {
         bool Add(T item);
+        void Remove(T item);
+        void Remove(Func<T, bool> predicate);
         IEnumerable<IContainer<T>> GetContainers();
         IEnumerable<IContainer<U>> GetContainers<U>();
         IEnumerable<T> Flatten();
@@ -63,6 +65,19 @@ namespace SimpleInventory
             }
 
             return false;
+        }
+
+        public void Remove(T item)
+        {
+            _collection.Remove(item);
+        }
+
+        public void Remove(Func<T, bool> predicate)
+        {
+            foreach (var item in _collection.Where(predicate) )
+            {
+                Remove(item);
+            }
         }
 
         public ILookup<T, T> GetStacks()

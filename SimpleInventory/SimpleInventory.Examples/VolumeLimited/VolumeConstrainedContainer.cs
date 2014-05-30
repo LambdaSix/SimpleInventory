@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SimpleInventory.Examples.Common;
@@ -39,6 +40,16 @@ namespace SimpleInventory.Examples.VolumeLimited
             CurrentVolume += item.Volume;
             CurrentWeight += item.Weight;
             return true;
+        }
+
+        public void Remove(T item)
+        {
+            Container.Remove(item);
+        }
+
+        public void Remove(Func<T,bool> predicate)
+        {
+            Container.Remove(predicate);
         }
 
         public IEnumerable<IContainer<T>> GetContainers()
