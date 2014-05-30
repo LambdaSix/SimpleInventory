@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using SimpleInventory.Examples.Common;
 
 namespace SimpleInventory.Examples.VolumeLimited
@@ -44,12 +45,21 @@ namespace SimpleInventory.Examples.VolumeLimited
 
         public void Remove(T item)
         {
+            CurrentVolume -= item.Volume;
+            CurrentWeight -= item.Weight;
+
+            CurrentVolume = Math.Max(CurrentVolume, 0);
+            CurrentWeight = Math.Max(CurrentWeight, 0);
+
             Container.Remove(item);
         }
 
         public void Remove(Func<T,bool> predicate)
         {
-            Container.Remove(predicate);
+            foreach (var item in Container.Where(predicate))
+            {
+                Remove(item);
+            }
         }
 
         public IEnumerable<IContainer<T>> GetContainers()
