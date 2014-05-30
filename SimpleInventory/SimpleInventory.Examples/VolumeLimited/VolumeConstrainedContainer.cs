@@ -54,6 +54,10 @@ namespace SimpleInventory.Examples.VolumeLimited
             Container.Remove(item);
         }
 
+        /// <summary>
+        /// Remove all items from bag that match <paramref name="predicate"/>
+        /// </summary>
+        /// <param name="predicate">Predicate matcher for removal</param>
         public void Remove(Func<T,bool> predicate)
         {
             foreach (var item in Container.Where(predicate))
