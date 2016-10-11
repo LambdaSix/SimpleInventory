@@ -22,6 +22,8 @@ namespace SimpleInventory
     {
         bool TryAdd(T item);
         void Add(T item);
+        bool Remove(T item);
+
         IEnumerable<IContainer<T>> GetContainers();
         IEnumerable<IContainer<U>> GetContainers<U>();
         IEnumerable<T> Flatten();
@@ -74,6 +76,8 @@ namespace SimpleInventory
 
             throw new InventoryFullException("Inventory Full");
         }
+
+        public bool Remove(T item) => _collection.Remove(item);
 
         public ILookup<T, T> GetStacks()
         {
