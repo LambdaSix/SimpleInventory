@@ -51,6 +51,8 @@
     <Compile Include="Common\IClothing.cs" />
     <Compile Include="Common\InventoryTypes.cs" />
     <Compile Include="Common\Item.cs" />
+    <Compile Include="InventoryLetters\InventoryLetterBag.cs" />
+    <Compile Include="InventoryLetters\LeatherBackpack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VolumeLimited\LeatherBackpack.cs" />
     <Compile Include="Common\Player.cs" />
@@ -61,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DroppableBags\" />
-    <Folder Include="InventoryLetters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleInventory\SimpleInventory.csproj">
