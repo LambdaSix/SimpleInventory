@@ -32,6 +32,12 @@ namespace SimpleInventory.Examples.Common
             TypeConstraints = typeConstraints;
         }
 
+        public void Equip<T>(T item) where T:Item
+        {
+            if (TypeConstraints.Contains(typeof(T)))
+                Item = item;
+        }
+
         public EquipSlot() : this(float.NaN, new []{typeof(Item)}) {}
 
         public EquipSlot(IEnumerable<Type> typeConstraints) : this(float.NaN, typeConstraints) {}
