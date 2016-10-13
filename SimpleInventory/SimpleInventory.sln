@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInventory", "SimpleIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInventory.Tests", "SimpleInventory.Tests\SimpleInventory.Tests.csproj", "{CF84F7D6-9188-4820-85F6-EDDF9370F9E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInventory.Examples", "SimpleInventory.Examples\SimpleInventory.Examples.csproj", "{FD56E8D3-C5A6-4956-A41F-AB7E2802AFCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{CF84F7D6-9188-4820-85F6-EDDF9370F9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF84F7D6-9188-4820-85F6-EDDF9370F9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF84F7D6-9188-4820-85F6-EDDF9370F9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD56E8D3-C5A6-4956-A41F-AB7E2802AFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD56E8D3-C5A6-4956-A41F-AB7E2802AFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD56E8D3-C5A6-4956-A41F-AB7E2802AFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD56E8D3-C5A6-4956-A41F-AB7E2802AFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

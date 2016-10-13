@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -31,14 +32,19 @@ namespace SimpleInventory.Tests.TestHelpers
             return GetEnumerator();
         }
 
-        public bool TryAdd(Item item)
+        public bool Add(Item item)
         {
-            return _inventory.TryAdd(item);
+            return _inventory.Add(item);
         }
 
-        public void Add(Item item)
+        public void Remove(Item item)
         {
-            _inventory.Add(item);
+            _inventory.Remove(item);
+        }
+
+        public void Remove(Func<Item,bool> predicate)
+        {
+            _inventory.Remove(predicate);
         }
 
         public IEnumerable<IContainer<Item>> GetContainers()
